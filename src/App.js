@@ -4,7 +4,7 @@ import { Typography } from '@mui/material';
 function App() {
   return (
     <div className="App">
-      <Typography variant="h2" component='h2' datatest='heading'>Bookish</Typography>
+      <Typography variant="h2" component='h2' data-test='heading'>Bookish</Typography>
     </div>
   );
 }
