@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Typography } from '@mui/material';
+import axios from "axios";
+
 import BookList from "./BookList";
 
-function App() {
+const App = () => {
 
-  const books = [
-    { name: "Refactoring"}, 
-    { name: "Domain-driven design"}
-  ];
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    const fetchBooks = async () => {
+      const res = await axios.get('http://localhost:8080/books');
+      setBooks(res.data);
+    };
+
+    fetchBooks();
+  }, []);
 
   return (
     <div className="App">
