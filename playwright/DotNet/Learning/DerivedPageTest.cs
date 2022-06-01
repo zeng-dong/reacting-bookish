@@ -31,3 +31,7 @@ public class DerivedPageTest : PageTest
         await Expect(Page.Locator("text='Employee Details'")).ToBeVisibleAsync();
     }
 }
+
+//// command line
+/// $ENV:HEADED=1
+/// dotnet test --filter "FullyQualifiedName=DotNet.Learning.DerivedPageTest"
